@@ -27,4 +27,35 @@ Visual Studio Code (VSC) is lightweight and fast, and if you have used SublimeTe
  
   Visual Studio Code also support one of the best features that other editors are not supports is ***Live Share*** is a feature that used to share your  VS Code instance and allow someone remote to control and run other things such as modifications in file or debugging. Live share is published as a plugin.
 
-       
+
+
+### Useful plugins of VS-Code :
+
+  #### 1. Auto Close Tag  :
+ 
+  For programmer coding is an important in his life so its very much important save time using different plugins and increase productivity, ***Auto Close Tag***give you much of the same experience in Code. Auto Close Tag automatically **adds** a **closing tag**, which saves  pretty good efforts over time,
+  
+  #### 2. Auto Rename Tag  :
+
+  ***Auto Rename Tag*** renames closed tags automatically. It's amazing how tiny improvements like these can make a world of difference. Because this small plugins  productivity increases rapidly.
+
+  #### 3. C#  :
+
+While You need an extension to develop **C#** applications, Since ***Visual Stdio Code*** supports multiple programming languages like html,css,js,c# etc. C# support is like any other language an extension. This is most likely the first extension you will ever install as a .NET developer and it is very easy to install new plugin in VS-Code.
+
+ #### 4. Code Runner :
+
+***Code Runner*** is also useful extension. Code Runner can `execute` one or more **highlighted lines** of code inside Code. The experience is  great because we can select set of lines that we are wanted to see output. It is very easy to install new plugin in VS-Code. 
+
+#### 5. Code Spell Checker :
+
+Its very important to write all correct spelling so that instead of checking all spelling mistake manually let the plugin do for you, Some don't mind and some do but We make typing mistake some time and it is very helpful when they are fixed easily. **Code Spell Checker** work for most code files and even Markdown.
+
+
+#### 6. Debugger for Chrome :
+
+It is very useful plugin while debugging the No need to leave Code if you need to debug **JavaScript**. Debugger for Chrome is a useful plugin, let's you debug your source files directly in Code. A similar solution is available in Visual Studio but the whole experience works much smoother in Code.
+
+#### 7. Dracula Theme :
+
+One of important thing in code editor, is the feature of customizing the UI. Themes are available in Visual Studio as well. **Dracula Theme** (works in a lot of IDEs) and Code is no exception. Code looks very pretty in Dracula Theme.
