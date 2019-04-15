@@ -1,4 +1,4 @@
-##  Visual Studio :
+##  Visual Studio Code :
 
  VSCODE is stands for ***Virtual Studio Code*** is a source-code editor like sublime, notepad++. Virtual Studio Code is developed by Microsoft for Windows, Linux and macOS. Visual Studio Code is based on Electron, a framework which is very useful to deploy Node.js applications.
 
