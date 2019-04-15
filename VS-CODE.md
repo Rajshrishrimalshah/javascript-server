@@ -15,6 +15,9 @@ Visual Studio Code (VSC) is lightweight and fast, and if you have used SublimeTe
  
   While **coding**, sometimes it is possible that you may forget a particular function, where the function is initially defined. What are the required parameters for that function.With ***Peek*** Feature, you can select a function then hit **Shift + F12**. The selection expands into an window showing the complete definition of the function as well as where the function is defined. The feature currently works in C, C#, JavaScript, TypeScript, .NET, and a few other programming languages.
 
+   #### 3. CLI :
+ 
+  Similar to different code editor, **VS-CODE** is also support one of the important feature is ***Command Line Interface*** like SublimeText with its #####subl command line, Visual Studio Code is equipped a CLI named code and it is easy to use. In Windows machine, the ***Command Line Interface*** will have already been installed along with the app. The CLI is accessible through the Command Prompt. In different Operating System it can be installed and uninstalled through the Command Palette. You can use the CLI to open a particular directory to Visual Studio Code.
 
 
 
