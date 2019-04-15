@@ -23,5 +23,8 @@ Visual Studio Code (VSC) is lightweight and fast, and if you have used SublimeTe
  
   ***Visual Studio Code*** has Git built feature is right available in the editor. On the left of the sidebar, It is very easy  find the Git icon. You can initialize Git as well as perform several **Git commands** such as commit, pull, push,, publish, and see the changes within the file. In addition to that, Suppose you are making changes on a **Git repository**, the Visual Studio will show color indicators in the code editor, thay will indicate where you have made the changes.
 
+  #### 5. Live Share :
+ 
+  Visual Studio Code also support one of the best features that other editors are not supports is ***Live Share*** is a feature that used to share your  VS Code instance and allow someone remote to control and run other things such as modifications in file or debugging. Live share is published as a plugin.
 
        
