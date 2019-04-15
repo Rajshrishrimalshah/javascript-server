@@ -7,6 +7,6 @@ Visual Studio Code (VSC) is lightweight and fast, and if you have used SublimeTe
 ### Top Visual Studio Code features 
 
 #### 1. Intellisense :
-        IntelliSense is code auto-complete meets artificial intelligence. This utility provides a list of suggestions along with a short hint or description as we are writing codes. These is derived from several contextual factors such as the programming language, the syntax, the variables, the functions as well as all the codes within the file.
+        **Intellisense** is use for auto-complete meets artificial intelligence. This feature is very useful for programmer to save their time and efforts. This feature provides a list of suggestions with a short hint or may be description when programmers are writing code. This feature work according to different programming language, syntax, variables as well as functions. It is a great feature to improve productivity.
 
-        IntelliSense supports a number of programming language out-of-the-box, including Sass, LESS, JavaScript, TypeScript, and PHP. Some extensions to include IntelliSense for other programming languages are also available. It is a great feature to improve productivity.
+        ![Philadelphia's Magic Gardens. This place was so cool!](/home/nodexpune3/Pictures/Intellisense.png "Philadelphia's Magic Gardens")
