@@ -17,8 +17,11 @@ Visual Studio Code (VSC) is lightweight and fast, and if you have used SublimeTe
 
    #### 3. CLI :
  
-  Similar to different code editor, **VS-CODE** is also support one of the important feature is ***Command Line Interface*** like SublimeText with its #####subl command line, Visual Studio Code is equipped a CLI named code and it is easy to use. In Windows machine, the ***Command Line Interface*** will have already been installed along with the app. The CLI is accessible through the Command Prompt. In different Operating System it can be installed and uninstalled through the Command Palette. You can use the CLI to open a particular directory to Visual Studio Code.
+  Similar to different code editor, **VS-CODE** is also support one of the important feature is ***Command Line Interface*** like SublimeText with its *subl* command line, Visual Studio Code is equipped a CLI named code and it is easy to use. In Windows machine, the ***Command Line Interface*** will have already been installed along with the app. The CLI is accessible through the Command Prompt. In different Operating System it can be installed and uninstalled through the Command Palette. You can use the CLI to open a particular directory to Visual Studio Code.
 
+   #### 4. Built-in Git :
+ 
+  ***Visual Studio Code*** has Git built feature is right available in the editor. On the left of the sidebar, It is very easy  find the Git icon. You can initialize Git as well as perform several **Git commands** such as commit, pull, push,, publish, and see the changes within the file. In addition to that, Suppose you are making changes on a **Git repository**, the Visual Studio will show color indicators in the code editor, thay will indicate where you have made the changes.
 
 
        
