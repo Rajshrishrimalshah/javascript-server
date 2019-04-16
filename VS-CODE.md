@@ -42,8 +42,10 @@ Visual Studio Code (VSC) is lightweight and fast, and if you have used SublimeTe
 
   #### 1. Auto Close Tag  :
  
-  For programmer coding is an important in his life so its very much important save time using different plugins and increase productivity, ***Auto Close Tag***give you much of the same experience in Code. Auto Close Tag automatically **adds** a **closing tag**, which saves  pretty good efforts over time,
-  
+  For programmer coding is an important in his life so its very much important save time using different plugins and increase productivity, ***Auto Close Tag***give you much of the same experience in Code. Auto Close Tag automatically **adds** a **closing tag**, which saves  pretty good efforts over time.
+
+  ![AutoCloseTag](https://blog.elmah.io/content/images/2018/05/auto-close-tag.gif)
+
   #### 2. Auto Rename Tag  :
 
   ***Auto Rename Tag*** renames closed tags automatically. It's amazing how tiny improvements like these can make a world of difference. Because this small plugins  productivity increases rapidly.
