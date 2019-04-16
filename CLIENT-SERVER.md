@@ -1,14 +1,16 @@
 ##  Client-Server Architecture :
 
-Client and Server architecture is what makes the **INTERNET** possible because of it we can easily transmit the data over the network.
+Client and Server architecture is what makes the **INTERNET** possible because of it we can easily transmit the data over the network. Client and Server architecture is very useful because storing data at **centralized** location and users can access data same time at a time Therefore **data** can be easily managed.
 
-#### What is a client ?
+####  Client :
 A client is a computer device  or machine that uses a service made available by a server.
+eg. We are users of **Facebook.com** and we hsave our profile, status, post are saved on their server.
 
-#### what is a Server ?
+####  Server :
 A server is a computer  useful to run services to serve the needs of other computers or fulfill the requirement of client by serving files to clients. There may be different types of server are available ***WEB, FILE, DATABASE SERVER***, etc.
+eg. As **Facebook.com** their main responsibility is to store users data and to maintain security.
 
-#### What is a Host ?
+####  Host :
 A host is a computer or machine, connected to other  machines for which it provides data over the internet.
 
 #### Why its required ?
