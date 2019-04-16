@@ -50,6 +50,8 @@ Visual Studio Code (VSC) is lightweight and fast, and if you have used SublimeTe
 
   ***Auto Rename Tag*** renames closed tags automatically. It's amazing how tiny improvements like these can make a world of difference. Because this small plugins  productivity increases rapidly.
 
+  ![AutoRenameTag](https://blog.elmah.io/content/images/2018/05/auto-rename-tag.)
+
   #### 3. C#  :
 
 While You need an extension to develop **C#** applications, Since ***Visual Stdio Code*** supports multiple programming languages like html,css,js,c# etc. C# support is like any other language an extension. This is most likely the first extension you will ever install as a .NET developer and it is very easy to install new plugin in VS-Code.
@@ -58,15 +60,32 @@ While You need an extension to develop **C#** applications, Since ***Visual Stdi
 
 ***Code Runner*** is also useful extension. Code Runner can `execute` one or more **highlighted lines** of code inside Code. The experience is  great because we can select set of lines that we are wanted to see output. It is very easy to install new plugin in VS-Code. 
 
+![CodeRunner](https://blog.elmah.io/content/images/2018/05/code-runner.gif)
+
 #### 5. Code Spell Checker :
 
 Its very important to write all correct spelling so that instead of checking all spelling mistake manually let the plugin do for you, Some don't mind and some do but We make typing mistake some time and it is very helpful when they are fixed easily. **Code Spell Checker** work for most code files and even Markdown.
+
+![CodeSpellChecker](https://blog.elmah.io/content/images/2018/05/code-spell-checker.gif)
 
 
 #### 6. Debugger for Chrome :
 
 It is very useful plugin while debugging the No need to leave Code if you need to debug **JavaScript**. Debugger for Chrome is a useful plugin, let's you debug your source files directly in Code. A similar solution is available in Visual Studio but the whole experience works much smoother in Code.
 
+
+![DebuggerForChrome](https://blog.elmah.io/content/images/2018/05/debugger-for-chrome.gif)
+
 #### 7. Dracula Theme :
 
 One of important thing in code editor, is the feature of customizing the UI. Themes are available in Visual Studio as well. **Dracula Theme** (works in a lot of IDEs) and Code is no exception. Code looks very pretty in Dracula Theme.
+
+
+![DraculaTheme](https://blog.elmah.io/content/images/2018/05/dracula.png)
+
+#### 8. VSCode-icons :
+
+File icons lets you navigate much faster and easier, programmer can easily recognize different files available in directory. VSCode-icons brings filetype icons into Code. Much like the File Icons extension we highlighted for Visual Studio,
+
+
+![VSCode-icons](https://blog.elmah.io/content/images/2018/05/vscode-icons.gif)
