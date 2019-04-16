@@ -1,4 +1,4 @@
-##  Client-Server Architecture : 
+##  Client-Server Architecture :
 
 Client and Server architecture is what makes the **INTERNET** possible because of it we can easily transmit the data over the network.
 
@@ -12,7 +12,7 @@ A server is a computer  useful to run services to serve the needs of other compu
 A host is a computer or machine, connected to other  machines for which it provides data over the internet.
 
 #### Why its required ?
-Eg. To simplify this , suppose you want to download an Mp3 song or Movies from another computer on your network. That computer is “hosting” the movies and therefore, it is the host computer.On the other hand, if that same computer downloads and movies from your computer, your computer becomes the “host” computer. 
+Eg. To simplify this , suppose you want to download an Mp3 song or Movies from another computer on your network. That computer is “hosting” the movies and therefore, it is the host computer.On the other hand, if that same computer downloads and movies from your computer, your computer becomes the “host” computer.
 
 Most Important is a **“HOST”** must have an assigned IP address.Likewise, your “ROUTER” can be a host to other routers.but,”MODEMS”,”HUBS” and “SWITCHES” are not considered hosts because they do not have assigned IP addresses.
 
@@ -21,5 +21,5 @@ Most Important is a **“HOST”** must have an assigned IP address.Likewise, yo
     If the server is a **“PUBLIC”** then it can be accessed from the Internet.
     If the server is **“PRIVATE”**  then it can be accessed from inside of your LAN only otherwise you have shared a port or follow some secure procedure.
 
-   
-![CodeRunner](https://learntomato.flashrouters.com/wp-content/uploads/client-server-model.jpg)
+
+![CodeRunner](http://www.rfwireless-world.com/images/Client-Server-Architecture.jpg)
