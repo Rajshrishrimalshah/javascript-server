@@ -26,6 +26,8 @@ Visual Studio Code (VSC) is lightweight and fast, and if you have used SublimeTe
   #### 5. Live Share :
  
   Visual Studio Code also support one of the best features that other editors are not supports is ***Live Share*** is a feature that used to share your  VS Code instance and allow someone remote to control and run other things such as modifications in file or debugging. Live share is published as a plugin.
+  
+  ![LiveShare](https://scotch-res.cloudinary.com/image/upload/dpr_1,w_700,q_auto:good,f_auto/media/303/HmCJejGyR7Cw0xbfedFS_Screen%20Shot%202018-07-23%20at%2022.05.28.png)
 
 
 
