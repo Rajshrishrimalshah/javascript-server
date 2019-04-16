@@ -50,7 +50,7 @@ Visual Studio Code (VSC) is lightweight and fast, and if you have used SublimeTe
 
   ***Auto Rename Tag*** renames closed tags automatically. It's amazing how tiny improvements like these can make a world of difference. Because this small plugins  productivity increases rapidly.
 
-  ![AutoRenameTag](https://blog.elmah.io/content/images/2018/05/auto-rename-tag.)
+  ![AutoRenameTag](https://blog.elmah.io/content/images/2018/05/auto-rename-tag.gif)
 
   #### 3. C#  :
 
