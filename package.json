@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "extra":"npx babel-node extra/utils",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

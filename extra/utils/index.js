@@ -1,3 +1,6 @@
-import * as check from './utils.index'
 
-check.checkpermission();
+import hasPermission from './extra/utils/permissions'
+
+
+console.log(hasPermission('getUsers','trainee','read'));
+
