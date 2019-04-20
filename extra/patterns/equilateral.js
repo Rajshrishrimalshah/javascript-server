@@ -1,4 +1,4 @@
-function star(n) {
+export default function starEquilatral(n) {
 
 
 	let row, column;
@@ -55,5 +55,4 @@ function star(n) {
 	*/
 }
 }
-let n = process.argv[2];
-star(n);
+

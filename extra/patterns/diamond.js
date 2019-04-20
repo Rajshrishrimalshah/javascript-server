@@ -1,4 +1,4 @@
-function star(max) {
+export default function starDiamond(max) {
 
 
 		let row, column;
