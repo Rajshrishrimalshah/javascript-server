@@ -1,35 +1,27 @@
-let users = {
-	getUsers: {
-		all: ["head-trainer"],
-		read: ["trainee", "trainer"],
-		write: ["trainer"],
-		delete: []
-	}
+import {PERMISSION_ALL,PERMISSION_READ,PERMISSION_WRITE,PERMISSION_DELETE,
+  MODULE_USER,ROLE_OF_TRAINER,ROLE_OF_TRAINEE,ROLL_OF_HEAD_TRAINER} from "./../constant"
+
+const PERMISSION = {
+  [MODULE_USER] : {
+		[PERMISSION_ALL]: [ROLL_OF_HEAD_TRAINER],
+		[PERMISSION_READ]: [ROLE_OF_TRAINEE, ROLE_OF_TRAINER],
+		[PERMISSION_WRITE]: [ROLE_OF_TRAINER],
+		[PERMISSION_DELETE]: [],
+	},
 };
 
-console.log(hasPermission("getUsers", "head-trainer", "delete"));
-
-function hasPermission(module, role, permissiontype) {
-
-  if(!users[module][permissiontype])
-  {
-    return false;
+export const  hasPermission = (module,role,permissionType) => {
+  if(!PERMISSION[module]) { return false;
   }
 
-  // CASE 1 : all
-	for (let ALL in users[module]["all"]) {
-		if (role === users[module]["all"][ALL]) {
-			return true;
-		}
-	}
-	// CASE 2 : read and write
-	for (let userRole in users[module][permissiontype]) {
-		if (role == users[module][permissiontype][userRole]) {
-			return true;
-		}
-
-
-	return false;
+  if(!PERMISSION[module][permissionType]) {  return false;
 }
 
+  if(PERMISSION[module][PERMISSION_ALL] && PERMISSION[module][PERMISSION_ALL] == -1) {
+    return false;
 }
+
+  return true;
+};
+
+
