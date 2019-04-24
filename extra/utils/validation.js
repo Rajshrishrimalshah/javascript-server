@@ -1,31 +1,28 @@
+import { users } from "../constant";
+import { validateEmail } from "./helpers"
+
 let validEmail = [];
 let invalidEmail = [];
 let myEmail = /@successive.tech\s*$/;
-displayUsers();
 
-export const validateEmail = (users) => {
+
+  export function CheckEmail(users){
   users.forEach(element => {
-    let { reviewerEmail, traineeEmail } = element;
+		let { reviewerEmail, traineeEmail } = element;
 
-    if (traineeEmail.match(myEmail)) {
-      validEmail.push(traineeEmail);
-      return true;
-    } else {
+		if (validateEmail(reviewerEmail) && validateEmail(traineeEmail)) {
+        validEmail.push(traineeEmail);
+        validEmail.push(reviewerEmail);
+		} else {
       invalidEmail.push(traineeEmail);
-      return false;
-    }
-
-    if (reviewerEmail.match(myEmail)) {
-      validEmail.push(reviewerEmail);
-      return true;
-    } else {
-      invalidEmail.push(reviewerEmail);
-      return false;
+      invalidEmail.push(reviewerEmail)
     }
   });
-};
+  displayUsers();
+}
 
-export const displayUsers = () => {
+
+export function displayUsers(){
   process.stdout.write("Total Valid Users :\n");
   console.log(validEmail.length);
   validEmail.forEach(function(value) {
