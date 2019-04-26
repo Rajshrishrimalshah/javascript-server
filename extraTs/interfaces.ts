@@ -3,8 +3,7 @@ export interface Ipattern {
 }
 
 export interface Valid {
-  traineeEmail: string;
-  reviewerEmail: string;
+  (traineeEmail: string,reviewerEmail: string):void;
 }
 
 export interface hasPer {
