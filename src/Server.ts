@@ -1,4 +1,4 @@
-import { IConfig } from "./IConfig";
+import { IConfig } from "./config/IConfig";
 import * as express from "express";
 
 class Server {
@@ -23,6 +23,7 @@ class Server {
       console.log(`Example app listening on port ${this.port}!`)
     );
   }
+
 }
 
 export default Server;

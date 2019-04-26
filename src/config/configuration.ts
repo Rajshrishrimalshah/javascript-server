@@ -1,5 +1,5 @@
-import { IConfig } from "./IConfig";
-import * as dotenv from "dotenv";
+import { IConfig } from './IConfig';
+import * as dotenv from 'dotenv';
 dotenv.config();
 
 const configuration = {
