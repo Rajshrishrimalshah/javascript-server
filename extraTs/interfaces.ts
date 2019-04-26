@@ -1,5 +1,5 @@
 export interface Ipattern {
-  max: number;
+  (max: number):void;
 }
 
 export interface Valid {
