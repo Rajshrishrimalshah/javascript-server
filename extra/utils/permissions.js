@@ -19,20 +19,20 @@ const PERMISSION = {
 };
 
 export const hasPermission = (module, role, permissionType) => {
-  if (!PERMISSION[module]) {
-    return false;
-  }
+    if (!PERMISSION[module]) {
+      return false;
+    }
 
-  if (!PERMISSION[module][permissionType]) {
-    return false;
-  }
+    if (!PERMISSION[module][permissionType]) {
+      return false;
+    }
 
-  if (
+    if (
     PERMISSION[module][PERMISSION_ALL] &&
     PERMISSION[module][PERMISSION_ALL] == -1
-  ) {
-    return false;
-  }
+    ) {
+      return false;
+   }
 
   return true;
 };
