@@ -1,12 +1,14 @@
+import { Valid } from './../interfaces';
 import { users } from "../constant";
 import { validateEmail } from "./helpers"
+
 
 let validEmail = [];
 let invalidEmail = [];
 let myEmail = /@successive.tech\s*$/;
 
 
-  export function CheckEmail(users){
+  export function CheckEmail(users: Valid[]){
   users.forEach(element => {
 		let { reviewerEmail, traineeEmail } = element;
 

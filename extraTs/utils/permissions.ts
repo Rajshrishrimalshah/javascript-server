@@ -1,5 +1,10 @@
+import { hasPer } from './../interfaces';
+let hasPermission:hasPer;
+
 import {PERMISSION_ALL,PERMISSION_READ,PERMISSION_WRITE,PERMISSION_DELETE,
-  MODULE_USER,ROLE_OF_TRAINER,ROLE_OF_TRAINEE,ROLL_OF_HEAD_TRAINER} from "./../constant"
+  MODULE_USER,ROLE_OF_TRAINER,ROLE_OF_TRAINEE,ROLL_OF_HEAD_TRAINER} from "../constant"
+
+
 
 const PERMISSION = {
   [MODULE_USER] : {
@@ -10,7 +15,7 @@ const PERMISSION = {
 	},
 };
 
-export const  hasPermission = (module,role,permissionType) => {
+export default  hasPermission = (module,role,permissionType) => {
   if(!PERMISSION[module]) { return false;
   }
 
