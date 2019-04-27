@@ -1,5 +1,8 @@
+import { notFound } from "./libs/routes/notFoundRoute";
 import { IConfig } from "./config/IConfig";
 import * as express from "express";
+import * as bodyParser from "body-parser";
+import { errorHandler } from "./libs/routes/errorHandler";
 
 class Server {
   private port;
@@ -9,21 +12,37 @@ class Server {
     this.port = process.env.PORT;
   }
 
-  bootstrap() {
+  public initBodyParser = () => {
+    this.app.use(bodyParser.json());
+    this.app.use(bodyParser.urlencoded({ extended: true }));
+  };
+
+  public bootstrap = () => {
+    this.initBodyParser();
     this.setupRoutes();
     return this;
-  }
+  };
 
-  setupRoutes() {
+  public setupRoutes = () => {
     this.app.get("/health-check", (req, res) => res.send("I am OK"));
-  }
 
-  run() {
+    this.app.post("/app", (req, res) => {
+      res.send("I am Fine !");
+    });
+
+    this.app.get("/check-error", (req, res) => {
+      throw new Error("i am error");
+    });
+    this.app.use(errorHandler);
+    this.app.use(notFound);
+
+  };
+
+  public run() {
     this.app.listen(this.port, () =>
       console.log(`Example app listening on port ${this.port}!`)
     );
   }
-
 }
 
 export default Server;
