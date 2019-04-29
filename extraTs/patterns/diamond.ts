@@ -1,5 +1,5 @@
-import { Ipattern } from "./../interfaces";
-let diamond: Ipattern;
+import { IDPattern } from "./../interfaces";
+let diamond: IDPattern;
 
  diamond = function(max: number): void{
   let row: number, column: number;

@@ -1,5 +1,5 @@
-import { hasPer } from "./../interfaces";
-let hasPermission: hasPer;
+import { IHasPer } from "./../interfaces";
+let hasPermission: IHasPer;
 
 import {
   PERMISSION_ALL,

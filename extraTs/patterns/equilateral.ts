@@ -1,5 +1,5 @@
-import { Ipattern } from "./../interfaces";
-let equilateral: Ipattern;
+import { IEPattern } from "./../interfaces";
+let equilateral: IEPattern;
 
  equilateral = function(n: number): void {
   let row: number, column: number;
