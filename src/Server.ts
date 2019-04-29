@@ -4,6 +4,9 @@ import * as express from "express";
 import * as bodyParser from "body-parser";
 import { errorHandler } from "./libs/routes/errorHandler";
 
+
+import routes from "./router"
+
 class Server {
   private port;
   app = express();
@@ -24,15 +27,8 @@ class Server {
   };
 
   public setupRoutes = () => {
-    this.app.get("/health-check", (req, res) => res.send("I am OK"));
+    this.app.get("/app",routes);
 
-    this.app.post("/app", (req, res) => {
-      res.send("I am Fine !");
-    });
-
-    this.app.get("/check-error", (req, res) => {
-      throw new Error("i am error");
-    });
     this.app.use(errorHandler);
     this.app.use(notFound);
 
