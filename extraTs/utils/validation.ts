@@ -6,7 +6,7 @@ let validEmail = [];
 let invalidEmail = [];
 let myEmail = /@successive.tech\s*$/;
 
-export function CheckEmail(users: Valid[]) {
+export function CheckEmail(users:{traineeEmail: string;reviewerEmail: string;}[]) {
   users.forEach(element => {
     let { reviewerEmail, traineeEmail } = element;
 

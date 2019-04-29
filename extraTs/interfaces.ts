@@ -1,9 +1,9 @@
 export interface Ipattern {
-  (max: number):void;
+  (max: number): void;
 }
 
 export interface Valid {
-  traineeEmail: string,reviewerEmail: string;
+  (users:{traineeEmail: string;reviewerEmail: string;}[]): void;
 }
 
 export interface hasPer {

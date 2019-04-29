@@ -21,7 +21,7 @@ const PERMISSION = {
   }
 };
 
-export default (hasPermission = (module, role, permissionType) => {
+hasPermission = function(module, role, permissionType)  {
   if (!PERMISSION[module]) {
     return false;
   }
@@ -37,4 +37,6 @@ export default (hasPermission = (module, role, permissionType) => {
   }
 
   return true;
-});
+};
+
+export default hasPermission;
