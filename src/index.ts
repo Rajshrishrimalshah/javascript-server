@@ -1,5 +1,5 @@
-import { default as configuration } from "./config/configuration";
+import { configuration } from "./config";
 import Server from "./Server";
 
-const server = new Server(configuration);
+const server:Server = new Server(configuration);
 server.bootstrap().run();

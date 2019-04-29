@@ -1,15 +1,16 @@
 import { notFound } from "./libs/routes/notFoundRoute";
-import { IConfig } from "./config/IConfig";
+import { IConfig } from "./config";
 import * as express from "express";
 import * as bodyParser from "body-parser";
 import { errorHandler } from "./libs/routes/errorHandler";
+import { configuration } from "./config"
 
 class Server {
   private port;
   app = express();
 
-  constructor(config: IConfig) {
-    this.port = process.env.PORT;
+  constructor(configuration) {
+    this.port = configuration.port;
   }
 
   public initBodyParser = () => {
@@ -35,7 +36,6 @@ class Server {
     });
     this.app.use(errorHandler);
     this.app.use(notFound);
-
   };
 
   public run() {
