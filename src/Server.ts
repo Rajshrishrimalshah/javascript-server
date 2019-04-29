@@ -4,8 +4,9 @@ import * as express from "express";
 import * as bodyParser from "body-parser";
 import { errorHandler } from "./libs/routes/errorHandler";
 
+import routes from "./controllers/trainee/routes"
 
-import routes from "./router"
+
 
 class Server {
   private port;
