@@ -4,11 +4,7 @@ import * as express from "express";
 import * as bodyParser from "body-parser";
 import { errorHandler } from "./libs/routes/errorHandler";
 import { configuration } from "./config"
-
-import routes from "./controllers/trainee/routes"
-
-
-
+import {default as router} from "./controllers/trainee/routes";
 class Server {
   private port;
   app = express();
@@ -29,7 +25,7 @@ class Server {
   };
 
   public setupRoutes = () => {
-    this.app.get("/app",routes);
+    this.app.use("/api",router);
 
     this.app.use(errorHandler);
     this.app.use(notFound);

@@ -2,22 +2,21 @@ import * as express from "express";
 let app = express();
 let router = express.Router();
 
-class routes {
-  public getMethod() {
-    router.get("/app", (req, res) => res.send("I am app"));
+class TraineeController {
+  public getMethod(req, res) {
+    res.send("get method called");
   }
 
-  public postMethod() {
-    router.get("/app", (req, res) => res.send("I am app"));
+  public postMethod(req, res) {
+    res.send("post method called");
   }
 
-  public putMethod() {
-    router.get("/app", (req, res) => res.send("I am app"));
+  public putMethod(req, res) {
+    res.send("put method called");
   }
 
-  public deleteMethod() {
-    router.get("/app", (req, res) => res.send("I am app"));
+  public deleteMethod(req, res) {
+    res.send("delete method called");
   }
 }
-
-export default new routes;
+export default new TraineeController();

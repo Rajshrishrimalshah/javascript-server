@@ -1,12 +1,8 @@
 import * as express from "express";
-import {default as routes} from "./Controller"
-let app = express();
+import TraineeController from "./Controller";
 let router = express.Router();
 
+router.get("/get", TraineeController.getMethod);
+router.post("/post", TraineeController.postMethod);
 
-    router.get("/app", routes.getMethod);
-    router.post("/app", routes.postMethod);
-    router.put("/app", routes.putMethod);
-    router.delete("/app", routes.deleteMethod);
-
-export default routes;
+export default router;
