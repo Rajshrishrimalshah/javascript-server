@@ -1,12 +1,18 @@
-export interface Ipattern {
-  (max: number):void;
+export interface IDPattern {
+  (max: number): void;
 }
 
-export interface Valid {
-  traineeEmail: string;
-  reviewerEmail: string;
+export interface IEPattern {
+  (max: number): void;
 }
 
-export interface hasPer {
+export interface IValid {
+    traineeEmail: string;
+    reviewerEmail: string;
+  }
+
+
+
+export interface IHasPer {
   (module: string, role: string, permission: string): boolean;
 }

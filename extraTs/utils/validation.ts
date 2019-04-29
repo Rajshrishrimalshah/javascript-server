@@ -1,30 +1,27 @@
-import { Valid } from './../interfaces';
+import { IValid } from "./../interfaces";
 import { users } from "../constant";
-import { validateEmail } from "./helpers"
-
+import { validateEmail } from "./helpers";
 
 let validEmail = [];
 let invalidEmail = [];
 let myEmail = /@successive.tech\s*$/;
 
-
-  export function CheckEmail(users: Valid[]){
+export function CheckEmail(users: IValid[]) {
   users.forEach(element => {
-		let { reviewerEmail, traineeEmail } = element;
+    let { reviewerEmail, traineeEmail } = element;
 
-		if (validateEmail(reviewerEmail) && validateEmail(traineeEmail)) {
-        validEmail.push(traineeEmail);
-        validEmail.push(reviewerEmail);
-		} else {
+    if (validateEmail(reviewerEmail) && validateEmail(traineeEmail)) {
+      validEmail.push(traineeEmail);
+      validEmail.push(reviewerEmail);
+    } else {
       invalidEmail.push(traineeEmail);
-      invalidEmail.push(reviewerEmail)
+      invalidEmail.push(reviewerEmail);
     }
   });
   displayUsers();
 }
 
-
-export function displayUsers(){
+export function displayUsers() {
   process.stdout.write("Total Valid Users :\n");
   console.log(validEmail.length);
   validEmail.forEach(function(value) {
@@ -36,4 +33,4 @@ export function displayUsers(){
   invalidEmail.forEach(function(value) {
     console.log(value);
   });
-};
+}

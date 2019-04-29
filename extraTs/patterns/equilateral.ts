@@ -1,9 +1,8 @@
-import { Ipattern } from './../interfaces';
-let equilateral:Ipattern;
+import { IEPattern } from "./../interfaces";
+let equilateral: IEPattern;
 
-
-export default  equilateral =(n) =>{
-  let row, column;
+ equilateral = function(n: number): void {
+  let row: number, column: number;
   if (n < 2 || n > 10) {
     process.stdout.write(" Please enter the number between 2 to 10 only !");
   } else {
@@ -20,6 +19,6 @@ export default  equilateral =(n) =>{
       process.stdout.write("\n");
     }
   }
-}
+};
 
-
+export default equilateral;

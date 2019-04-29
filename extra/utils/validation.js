@@ -23,7 +23,7 @@ let myEmail = /@successive.tech\s*$/;
 
 
 export function displayUsers(){
-  process.stdout.write("Total Valid Users :\n");
+  process.stdout.write("\nTotal Valid Users :\n");
   console.log(validEmail.length);
   validEmail.forEach(function(value) {
     console.log(value);
