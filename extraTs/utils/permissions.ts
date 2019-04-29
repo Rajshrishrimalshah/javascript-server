@@ -32,8 +32,7 @@ export default (hasPermission = (module, role, permissionType) => {
 
   if (
     PERMISSION[module][PERMISSION_ALL] &&
-    PERMISSION[module][PERMISSION_ALL] == -1
-  ) {
+    PERMISSION[module][PERMISSION_ALL][role] != -1) {
     return false;
   }
 

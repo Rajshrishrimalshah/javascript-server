@@ -1,8 +1,9 @@
 import { Ipattern } from "./../interfaces";
 let diamond: Ipattern;
 
-export default (diamond = max => {
-  let row, column;
+ diamond = function(max: number): void{
+  let row: number, column: number;
+
   if (max < 2 || max > 10) {
     console.log(" Please enter the number between 2 to 10 only !");
   } else {
@@ -27,8 +28,9 @@ export default (diamond = max => {
           process.stdout.write(" *");
         }
       }
-
       process.stdout.write("\n");
     }
   }
-});
+};
+
+export default diamond;
