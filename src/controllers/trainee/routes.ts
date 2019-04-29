@@ -1,20 +1,12 @@
 import * as express from "express";
+import {default as routes} from "./Controller"
 let app = express();
 let router = express.Router();
 
-class routes {
-  public static get() {
-    router.get("/app", (req, res) => res.send("I am app"));
-  }
-  public static post() {
-    router.get("/app", (req, res) => res.send("I am app"));
-  }
-  public static put() {
-    router.get("/app", (req, res) => res.send("I am app"));
-  }
-  public static delete() {
-    router.get("/app", (req, res) => res.send("I am app"));
-  }
-}
+
+    router.get("/app", routes.getMethod);
+    router.post("/app", routes.postMethod);
+    router.put("/app", routes.putMethod);
+    router.delete("/app", routes.deleteMethod);
 
 export default routes;

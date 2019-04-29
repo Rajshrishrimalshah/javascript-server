@@ -11,7 +11,7 @@ export const ROLL_OF_HEAD_TRAINER: string = "head-trainer";
 
 
 
-export const users  = {
+export const users  = [
 	{
 		traineeEmail: 'trainee1@successive.tech',
 		reviewerEmail: 'reviewer1@successive.tech'
@@ -32,4 +32,4 @@ export const users  = {
 		traineeEmail: 'trainee4@success.tech',
 		reviewerEmail: 'reviewer4@success.tech'
 	}
-};
+];

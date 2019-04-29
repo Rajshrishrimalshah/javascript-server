@@ -3,21 +3,21 @@ let app = express();
 let router = express.Router();
 
 class routes {
-  public get() {
+  public getMethod() {
     router.get("/app", (req, res) => res.send("I am app"));
   }
 
-  public post() {
+  public postMethod() {
     router.get("/app", (req, res) => res.send("I am app"));
   }
 
-  public put() {
+  public putMethod() {
     router.get("/app", (req, res) => res.send("I am app"));
   }
 
-  public delete() {
+  public deleteMethod() {
     router.get("/app", (req, res) => res.send("I am app"));
   }
 }
 
-export default routes;
+export default new routes;
