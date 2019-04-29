@@ -1,12 +1,13 @@
-import { IConfig } from "./config/IConfig";
+import { configuration } from './config/configuration';
+import { IConfig } from "./config";
 import * as express from "express";
 
 class Server {
-  private port;
-  app = express();
-
-  constructor(config: IConfig) {
-    this.port = process.env.PORT;
+  private port:number;
+  public app;
+  constructor(configuration) {
+    this.port = configuration.port;
+    this.app = express();
   }
 
   bootstrap() {
