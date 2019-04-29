@@ -1,6 +1,1 @@
-
-import hasPermission from './extra/utils/permissions'
-
-
-console.log(hasPermission('getUsers','trainee','read'));
-
+export {hasPermission} from "./permissions"
