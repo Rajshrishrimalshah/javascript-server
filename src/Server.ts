@@ -3,8 +3,8 @@ import { IConfig } from "./config";
 import * as express from "express";
 import * as bodyParser from "body-parser";
 import { errorHandler } from "./libs/routes/errorHandler";
-import { configuration } from "./config"
-import {default as router} from "./controllers/trainee/routes";
+import { configuration } from "./config";
+import { TROUTER } from "./router";
 class Server {
   private port;
   app = express();
@@ -25,7 +25,7 @@ class Server {
   };
 
   public setupRoutes = () => {
-    this.app.use("/api",router);
+    this.app.use("/api", TROUTER);
 
     this.app.use(errorHandler);
     this.app.use(notFound);

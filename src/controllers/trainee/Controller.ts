@@ -1,8 +1,9 @@
 import * as express from "express";
-let app = express();
-let router = express.Router();
 
 class TraineeController {
+  app = express();
+  router = express.Router();
+
   public getMethod(req, res) {
     res.send("get method called");
   }
