@@ -6,14 +6,11 @@ import{ validationMiddleware } from "./validationMiddleware"
 
 let traineeRouter = express.Router();
 
-traineeRouter.get("/get", validationMiddleware(schema), TraineeController.get);
-
-
-traineeRouter.put("/put", TraineeController.put);
-traineeRouter.delete("/delete", TraineeController.delete);
-
-traineeRouter.post("/post",
-  [
+traineeRouter.get("/get", validationMiddleware(schema.get), TraineeController.get);
+traineeRouter.put("/put", validationMiddleware(schema.update), TraineeController.put);
+traineeRouter.delete("/delete", validationMiddleware(schema.delete), TraineeController.delete);
+traineeRouter.post("/post", validationMiddleware(schema.create),TraineeController.post);
+  /*[
     check("email", "Invalid Email must be email address").isEmail(),
     check("password", "Invalid Password must be 3 characters").isLength({min: 3})
   ],
@@ -24,7 +21,7 @@ traineeRouter.post("/post",
       return res.status(422).json({errors:errors.array()});
     }
     next();
-    },TraineeController.post);
+    }*/
 
 
 
