@@ -4,19 +4,19 @@ class TraineeController {
   app = express();
   router = express.Router();
 
-  public getMethod(req, res) {
+  public get(req, res) {
     res.send("get method called");
   }
 
-  public postMethod(req, res) {
+  public post(req, res) {
     res.send("post method called");
   }
 
-  public putMethod(req, res) {
+  public put(req, res) {
     res.send("put method called");
   }
 
-  public deleteMethod(req, res) {
+  public delete(req, res) {
     res.send("delete method called");
   }
 }
