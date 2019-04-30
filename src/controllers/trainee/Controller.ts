@@ -1,10 +1,11 @@
 import * as express from "express";
-
+import { validationResult } from "express-validator/check"
 class TraineeController {
   app = express();
   router = express.Router();
 
   public get(req, res) {
+
     res.send("get method called");
   }
 
@@ -19,5 +20,7 @@ class TraineeController {
   public delete(req, res) {
     res.send("delete method called");
   }
+
+
 }
 export default new TraineeController();
