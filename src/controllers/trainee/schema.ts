@@ -7,28 +7,28 @@ export const schema: any = {
       isInt: true,
       isEmpty: {
         errorMessage: "ID is required",
-        negated: true,
-      },
+        negated: true
+      }
     },
     name: {
       in: ["body"],
       isString: true,
       isEmpty: {
         errorMessage: "Name is required",
-        negated: true,
+        negated: true
       },
       isLength: {
-        errorMessage: 'length must be 3 characters',
-        options: { min: 3 },
+        errorMessage: "length must be 3 characters",
+        options: { min: 3 }
+      }
     },
-    email:{
+    email: {
       in: ["body"],
       isString: true,
       isEmpty: {
         errorMessage: "Email is required",
-        negated: true,
-      },
-    },
+        negated: true
+      }
     }
   },
   delete: {
@@ -37,9 +37,9 @@ export const schema: any = {
       isInt: true,
       isEmpty: {
         errorMessage: "ID is required",
-        negated: true,
-      },
-    },
+        negated: true
+      }
+    }
   },
   update: {
     id: {
@@ -47,63 +47,32 @@ export const schema: any = {
       isInt: true,
       isEmpty: {
         errorMessage: "ID is required",
-        negated: true,
-      },
-    },
-  }
-};
-Object.freeze(schema);
-/*create: {
-    id: {
-      required: true,
-      string: true,
-      in: ["body"],
-      custom: function(value) {
-        console.log("Value", value);
-        throw { error: "Error Occured", message: "Message" };
+        negated: true
       }
     },
-    name: {
-      required: true,
-      regex: "",
-      in: ["body"],
-      errorMessage: "Name is required"
-    }
-  },
-  delete: {
-    id: {
-      required: true,
-      errorMessage: "Id is required",
-      in: ["params"]
-    }
+    dataToUpdate: {
+      in: ['body'],
+      isString: false,
+      isObject: false,
+      custom: function(dataToUpdate) {},
+  }
   },
   get: {
     skip: {
-      required: false,
-      default: 0,
-      number: true,
-      in: ["query"],
-      errorMessage: "Skip is invalid"
+      in: ["body"],
+      isInt: false,
+      options: value => {
+        let sanitizedValue;
+        sanitizedValue = 0;
+        return sanitizedValue;
+      }
     },
     limit: {
-      required: false,
-      default: 10,
-      number: true,
-      in: ["query"],
-      errorMessage: "Limit is invalid"
-    }
-  },
-  update: {
-    id: {
-      required: true,
-      string: true,
-      in: ["body"]
-    },
-    dataToUpdate: {
-      in: ["body"],
-      required: true,
-      isObject: true,
-      custom: function(dataToUpdate) {}
+      isString: false,
+      isInt: false,
+      in: ['body'],
+      errorMessage: 'Limit is invalid',
     }
   }
-};*/
+};
+Object.freeze(schema);

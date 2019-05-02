@@ -1,15 +1,15 @@
 import * as express from "express";
 import { validationResult } from "express-validator/check";
 class TraineeController {
-  app = express();
-  router = express.Router();
-
-  public get(req, res, next) {
+  public get(req, res) {
     res.send("get method called");
   }
 
   public post(req, res) {
-    res.send("post method called");
+    let id = req.body.id;
+    let name = req.body.name;
+    let email = req.body.email;
+    res.send("ID: " + id + " NAME: " + name + " EMAIL: " + email);
   }
 
   public put(req, res) {
