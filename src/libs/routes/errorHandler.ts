@@ -8,5 +8,6 @@ const error = {
   };
 
   export const errorHandler = (err, req, res, next) => {
-    res.send(error);
+
+    res.status(500).send(err);
   }

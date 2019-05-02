@@ -1,28 +1,14 @@
-import { schema } from './schema';
+import { schema } from "./schema";
 import { check, validationResult, checkSchema } from "express-validator/check";
 import * as express from "express";
 import TraineeController from "./Controller";
-import{ validationMiddleware } from "./validationMiddleware"
+import { validation } from "./validation";
 
 let traineeRouter = express.Router();
 
-traineeRouter.get("/get", validationMiddleware(schema.get), TraineeController.get);
-traineeRouter.put("/put", validationMiddleware(schema.update), TraineeController.put);
-traineeRouter.delete("/delete", validationMiddleware(schema.delete), TraineeController.delete);
-traineeRouter.post("/post", validationMiddleware(schema.create),TraineeController.post);
-  /*[
-    check("email", "Invalid Email must be email address").isEmail(),
-    check("password", "Invalid Password must be 3 characters").isLength({min: 3})
-  ],
-  (req, res, next) => {
-    const errors = validationResult(req);
-    console.log(errors.mapped());
-    if(!errors.isEmpty()){
-      return res.status(422).json({errors:errors.array()});
-    }
-    next();
-    }*/
-
-
+traineeRouter.get("/get", checkSchema(schema.create), validation(), TraineeController.get);
+traineeRouter.put("/put", checkSchema(schema.update), validation(), TraineeController.put);
+traineeRouter.delete("/delete", checkSchema(schema.delete), validation(), TraineeController.delete);
+//traineeRouter.post("/post", validationMiddleware(schema.create),TraineeController.post);
 
 export default traineeRouter;
