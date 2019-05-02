@@ -1,6 +1,6 @@
-import * as express from "express";
+import {express, Router} from "express";
 import TraineeController from "./Controller";
-let traineeRouter = express.Router();
+const traineeRouter: Router = Router();
 
 traineeRouter.get("/get", TraineeController.get);
 traineeRouter.post("/post", TraineeController.post);

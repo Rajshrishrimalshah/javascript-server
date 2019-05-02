@@ -1,16 +1,13 @@
-import { notFound } from "./libs/routes/notFoundRoute";
-import { IConfig } from "./config";
+import { notFoundRoute } from "./libs";
 import * as express from "express";
 import * as bodyParser from "body-parser";
-import { errorHandler } from "./libs/routes/errorHandler";
-import { configuration } from "./config";
+import { errorHandler } from "./libs";
 import { TROUTER } from "./router";
 class Server {
-  private port;
-  app = express();
+  public app: express.Express;
 
-  constructor(configuration) {
-    this.port = configuration.port;
+  constructor(private configuration) {
+    this.app = express();
   }
 
   public initBodyParser = () => {
@@ -27,13 +24,14 @@ class Server {
   public setupRoutes = () => {
     this.app.use("/api", TROUTER);
 
+
+    this.app.use(notFoundRoute);
     this.app.use(errorHandler);
-    this.app.use(notFound);
   };
 
   public run() {
-    this.app.listen(this.port, () =>
-      console.log(`Example app listening on port ${this.port}!`)
+    this.app.listen(this.configuration.port, () =>
+      console.log(`Example app listening on port ${this.configuration.port}!`)
     );
   }
 }
