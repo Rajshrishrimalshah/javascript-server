@@ -1,5 +1,5 @@
 import { schema } from "./schema";
-import { check, validationResult, checkSchema } from "express-validator/check";
+import { checkSchema } from "express-validator/check";
 import * as express from "express";
 import TraineeController from "./Controller";
 import { validation } from "./validation";
