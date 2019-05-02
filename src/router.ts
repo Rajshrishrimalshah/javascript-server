@@ -1,3 +1,3 @@
-import traineeRouter from "./controllers/trainee/routes";
+import { traineeRouter } from "./controllers";
 
 export const TROUTER = traineeRouter;
