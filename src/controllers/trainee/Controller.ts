@@ -1,7 +1,10 @@
 import * as express from "express";
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 
 =======
+=======
+>>>>>>> Stashed changes
 import * as jwt from "jsonwebtoken"
 import { validationResult } from "express-validator/check";
 >>>>>>> Stashed changes
@@ -27,6 +30,9 @@ class TraineeController {
 
     }
     res.send(token);
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   }
 
