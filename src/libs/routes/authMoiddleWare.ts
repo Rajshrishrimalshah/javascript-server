@@ -14,7 +14,12 @@ export const authMiddleWare = (module, permissionType) => (req, res, next) => {
       if (err) {
         next({error: 'Unauthorized', status: 403, message: 'Your are unauthorized'});
       }else {
-           console.log(hasPermission(module, decode.role, permissionType));
+          if(hasPermission(module, decode.role, permissionType)){
+              next();
+          }else{
+            next({error: 'Unauthorized', status: 403, message: 'Your are unauthorized'});
+          }
+
             next();
       }
     });

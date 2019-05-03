@@ -3,7 +3,7 @@ import * as jwt from "jsonwebtoken"
 import { validationResult } from "express-validator/check";
 class TraineeController {
   public get(req, res) {
-    res.send("Verified Token !");
+    res.send("Welcome you can access file !");
   }
 
   public post(req, res) {
