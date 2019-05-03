@@ -12,7 +12,7 @@ export const authMiddleWare = (module, permissionType) => (req, res, next) => {
 
     jwt.verify(token, configuration.secret, function(err, decode) {
       if (err) {
-        next(res.sendStatus(403).json({ errors: 'Unauthorized Access'}));;
+        next({error: 'Unauthorized', status: 403, message: 'Your are unauthorized'});
       }else {
            console.log(hasPermission(module, decode.role, permissionType));
             next();

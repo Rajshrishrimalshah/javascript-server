@@ -1,17 +1,10 @@
-import * as express from "express";
-
-const error = {
-  error: "Not Found",
-  message: "error",
-  status: 500,
-  timestamp: "2019-01-08T17:38:21.929Z"
-};
 
 export const errorHandler = (err, req, res, next) => {
-  res.status(err.status || 500);
-  res.json({
-    error:{
-      message: err.message
-    }
-  })
+  const error = {
+    error: err.error ? err.error : 'Error',
+    message:  err.message ? err.message : 'Error',
+    status: err.status ? err.status : 500,
+    timestamp: new Date()
+  };
+  res.status(error.status).json(error);
 };
