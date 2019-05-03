@@ -1,10 +1,10 @@
-import { checkSchema, validationResult } from "express-validator/check";
+import { validationResult } from "express-validator/check";
 
 export const validation = () => {
   return (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      throw new Error(res.status(424).json({ errors: errors.array() }));
+      next(res.json({ errors: errors.array() }));
     }
     next();
   };

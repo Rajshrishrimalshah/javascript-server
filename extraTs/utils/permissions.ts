@@ -22,6 +22,7 @@ const PERMISSION = {
 };
 
 hasPermission = function(module, role, permissionType)  {
+  console.log('Module : '+module+' role : '+role+' PermissionType : '+permissionType);
   if (!PERMISSION[module]) {
     return false;
   }
@@ -33,8 +34,10 @@ hasPermission = function(module, role, permissionType)  {
   if (
     PERMISSION[module][PERMISSION_ALL] &&
     PERMISSION[module][PERMISSION_ALL][role] != -1) {
-    return false;
+    return true;
   }
+
+  if(PERMISSION[module][permissionType][role] === -1){ return false }
 
   return true;
 };

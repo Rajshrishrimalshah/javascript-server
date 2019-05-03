@@ -8,5 +8,10 @@ const error = {
 };
 
 export const errorHandler = (err, req, res, next) => {
-  res.status(500).send(error);
+  res.status(err.status || 500);
+  res.json({
+    error:{
+      message: err.message
+    }
+  })
 };

@@ -1,15 +1,13 @@
-import * as express from "express";
+
+import * as jwt from "jsonwebtoken"
 import { validationResult } from "express-validator/check";
 class TraineeController {
   public get(req, res) {
-    res.send("get method called");
+    res.send("Verified Token !");
   }
 
   public post(req, res) {
-    let id = req.body.id;
-    let name = req.body.name;
-    let email = req.body.email;
-    res.send("ID: " + id + " NAME: " + name + " EMAIL: " + email);
+    res.send("Verified Token !");
   }
 
   public put(req, res) {
