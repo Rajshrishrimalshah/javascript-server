@@ -1,4 +1,3 @@
-import * as express from "express";
 export const notFound = (err, req, res) => {
   const error = {
     error: err.error ? err.error : "Error",

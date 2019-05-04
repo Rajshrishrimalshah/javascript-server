@@ -1,6 +1,6 @@
 import * as mongoose from "mongoose";
 class Database {
-  public static open({mongoUrl}) {
+  public static open({ mongoUrl }) {
     return new Promise((resolve, reject) => {
       const options = {};
       mongoose.connect(mongoUrl, options);
@@ -9,12 +9,10 @@ class Database {
         console.log("Mongoose connection error: " + err);
         reject("Error");
       });
-
       mongoose.connection.on("connected", () => {
         console.log("Mongoose connection open to " + mongoUrl);
         resolve();
       });
-
     });
   }
 

@@ -1,5 +1,4 @@
-
- export const errorHandler = (err, req, res, next) => {
+export const errorHandler = (err, req, res, next) => {
   const error = {
     error: err.error ? err.error : "Error",
     message:  err.message ? err.message : "Error",
