@@ -1,10 +1,12 @@
-import { IConfig } from './IConfig';
-import * as dotenv from 'dotenv';
+import * as dotenv from "dotenv";
+import { IConfig } from "./IConfig";
+
 dotenv.config();
 
 const configuration: IConfig = {
-  port: process.env.PORT,
   env: process.env.NODE_ENV,
+  mongoUrl: process.env.MONGO_URL,
+  port: process.env.PORT,
   secret: process.env.SECRET_KEY,
 };
 

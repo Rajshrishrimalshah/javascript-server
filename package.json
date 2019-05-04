@@ -7,8 +7,9 @@
     "precompile": "rm -r ./dist",
     "extra": "npx babel-node extraTs",
     "compile": "tsc-watch --project . --onSuccess \"npm run nodemon\"",
-    "nodemon": "nodemon ./dist/src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "nodemon": "nodemon ./dist/src",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "./node_modules/tslint/bin/tslint -c tslint.json -p tsconfig.json --exclude 'node_modules/**/*.{j,t}s'"
   },
   "repository": {
     "type": "git",
@@ -24,16 +25,21 @@
     "@babel/core": "^7.4.3",
     "@babel/node": "^7.2.2",
     "@babel/preset-env": "^7.4.3",
+    "@types/express": "^4.16.1",
     "@types/node": "^11.13.7",
     "commitizen": "^3.1.1",
     "tsc-watch": "^2.1.2",
     "typescript": "^3.4.5"
   },
   "dependencies": {
+    "@types/mongoose": "^5.3.27",
     "body-parser": "^1.19.0",
     "dotenv": "^7.0.0",
     "express": "^4.16.4",
     "express-validator": "^5.3.1",
-    "jsonwebtoken": "^8.5.1"
+    "husky": "^2.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.5.5",
+    "tslint": "^5.16.0"
   }
 }
