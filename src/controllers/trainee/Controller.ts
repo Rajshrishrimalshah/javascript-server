@@ -1,13 +1,12 @@
 import * as jwt from "jsonwebtoken";
-import { validationResult } from "express-validator/check";
-import * as express from "express";
+import { Request, Response}  from "express";
 import { configuration } from "src/config";
 class TraineeController {
-  public get(req, res) {
+  public get(req: Request, res: Response) {
     res.send("Welcome you can access file !");
   }
 
-  public post(req, res) {
+  public post(req: Request, res: Response) {
     res.send("Verified Token !");
     let id = req.body.id;
     let name = req.body.name;
@@ -18,11 +17,11 @@ class TraineeController {
     });
     console.log("token generated: " + token);
   }
-  public put(req, res) {
+  public put(req: Request, res: Response) {
     res.send("put method called");
   }
 
-  public delete(req, res) {
+  public delete(req:Request, res: Response) {
     res.send("delete method called");
   }
 }
