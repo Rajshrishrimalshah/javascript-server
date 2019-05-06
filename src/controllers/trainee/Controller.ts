@@ -1,22 +1,27 @@
-import {Request, Response, NextFunction} from "express";
 import * as jwt from "jsonwebtoken";
+import { Request, Response}  from "express";
+import { configuration } from "../../config/index";
 class TraineeController {
   public get(req: Request, res: Response) {
-    res.send("get method called");
+    res.send("Welcome you can access file !");
   }
 
   public post(req: Request, res: Response) {
+    res.send("Verified Token !");
     let id = req.body.id;
     let name = req.body.name;
     let email = req.body.email;
-    res.send("ID: " + id + " NAME: " + name + " EMAIL: " + email);
-  }
 
+    const token = jwt.sign({ UserID: id, name }, configuration.secret, {
+      expiresIn: 60 * 60
+    });
+    console.log("token generated: " + token);
+  }
   public put(req: Request, res: Response) {
     res.send("put method called");
   }
 
-  public delete(req: Request, res: Response) {
+  public delete(req:Request, res: Response) {
     res.send("delete method called");
   }
 }

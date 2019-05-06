@@ -7,7 +7,7 @@
     "precompile": "rm -r ./dist",
     "extra": "npx babel-node extraTs",
     "compile": "tsc-watch --project . --onSuccess \"npm run nodemon\"",
-    "nodemon": "nodemon ./dist/index.js",
+    "nodemon": "nodemon ./dist/src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

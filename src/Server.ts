@@ -1,7 +1,7 @@
 import { notFoundRoute } from "./libs";
 import * as express from "express";
 import * as bodyParser from "body-parser";
-import { errorHandler } from "./libs";
+import { errorHandler } from "./libs/routes/errorHandler";
 import { TROUTER } from "./router";
 class Server {
   public app: express.Express;
