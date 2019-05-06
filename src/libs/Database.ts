@@ -3,8 +3,11 @@ class Database {
   public static open({ mongoUrl }) {
     return new Promise((resolve, reject) => {
       const options = {};
-      mongoose.connect(mongoUrl, options);
-
+      try {
+      mongoose.connect(mongoUrl, { useNewUrlParser: true });
+      } catch (e) {
+        console.log(e);
+      }
       mongoose.connection.on("error", (err) => {
         console.log("Mongoose connection error: " + err);
         reject("Error");
