@@ -3,7 +3,7 @@ import {  checkSchema } from "express-validator/check";
 import * as express from "express";
 import TraineeController from "./Controller";
 import { validation } from "./validation";
-import { authMiddleWare } from "../../libs/routes/authMoiddleWare";
+import { authMiddleWare } from "../../libs/routes/authMiddleWare";
 
 
 let traineeRouter = express.Router();

@@ -1,6 +1,6 @@
 import * as jwt from "jsonwebtoken";
 import { Request, Response}  from "express";
-import { configuration } from "src/config";
+import { configuration } from "../../config/index";
 class TraineeController {
   public get(req: Request, res: Response) {
     res.send("Welcome you can access file !");
