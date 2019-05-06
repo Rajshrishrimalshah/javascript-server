@@ -1,3 +1,6 @@
 export interface IUserModel {
- email: string;
+created: Date;
+email: string;
+id: string;
+password: string;
 }

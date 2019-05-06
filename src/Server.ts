@@ -1,6 +1,6 @@
 import { configuration } from "./config";
 import { notFound } from "./libs/routes/notFoundRoute";
-import { TROUTER } from "./router";
+import { traineeRouter } from "./router";
 
 import * as bodyParser from "body-parser";
 import * as express from "express";
@@ -11,7 +11,7 @@ class Server {
   public app = express();
   private port;
 
-  constructor(configuration: any) {
+  constructor(configuration) {
     this.port = configuration.port;
   }
 
@@ -27,7 +27,7 @@ class Server {
   }
 
   public setupRoutes = () => {
-    this.app.use("/api", TROUTER);
+    this.app.use("/api", traineeRouter);
     this.app.use(errorHandler);
     this.app.use(notFound);
   }
@@ -36,7 +36,6 @@ class Server {
     Database.open({ mongoUrl: configuration.mongoUrl }).then(() => {
       this.app.listen(this.port, () =>
       console.log(`Example app listening on port ${this.port}!`));
-      console.log("success");
     })
     .catch((err) => {
       console.log("Error");

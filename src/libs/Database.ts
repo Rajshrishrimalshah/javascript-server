@@ -10,10 +10,10 @@ class Database {
       }
       mongoose.connection.on("error", (err) => {
         console.log("Mongoose connection error: " + err);
-        reject("Error");
+        reject(err);
       });
       mongoose.connection.on("connected", () => {
-        console.log("Mongoose connection open to " + mongoUrl);
+        console.log("! Database connection successfully !");
         resolve();
       });
     });

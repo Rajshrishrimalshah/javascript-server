@@ -1,22 +1,17 @@
 import { Request, Response } from "express";
-import { configuration } from "../../config";
-
 import * as jwt from "jsonwebtoken";
+import { configuration } from "../../config";
 class TraineeController {
   public get(req: Request, res: Response) {
     res.send("Welcome you can access file !");
   }
 
   public post(req: Request, res: Response) {
-    res.send("Verified Token !");
-    const id = req.body.id;
-    const name = req.body.name;
-    const email = req.body.email;
-
-    const token = jwt.sign({ UserID: id, name }, configuration.secret, {
+    const { name, email, password } = req.body;
+    const token = jwt.sign({ email }, configuration.secret, {
       expiresIn: 60 * 60
     });
-    console.log("token generated: " + token);
+    res.send("Token generated:   " + token);
   }
   public put(req: Request, res: Response) {
     res.send("put method called");
