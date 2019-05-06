@@ -32,5 +32,5 @@ export const users  = [
 	{
 		traineeEmail: 'trainee4@success.tech',
 		reviewerEmail: 'reviewer4@success.tech'
-	}
-};
+	},
+];

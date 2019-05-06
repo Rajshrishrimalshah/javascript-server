@@ -1,46 +1,27 @@
-import * as express from "express";
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-
-=======
-=======
->>>>>>> Stashed changes
-import * as jwt from "jsonwebtoken"
-import { validationResult } from "express-validator/check";
->>>>>>> Stashed changes
+import * as jwt from "jsonwebtoken";
+import { Request, Response}  from "express";
+import { configuration } from "../../config/index";
 class TraineeController {
-  app = express();
-  router = express.Router();
-
-  public get(req, res) {
-    res.send("get method called");
+  public get(req: Request, res: Response) {
+    res.send("Welcome you can access file !");
   }
 
-  public post(req, res) {
-<<<<<<< Updated upstream
-    res.send("post method called");
-=======
+  public post(req: Request, res: Response) {
+    res.send("Verified Token !");
     let id = req.body.id;
     let name = req.body.name;
     let email = req.body.email;
 
-    try{
-    let token = jwt.sign({id,name});
-    }catch{
-
-    }
-    res.send(token);
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+    const token = jwt.sign({ UserID: id, name }, configuration.secret, {
+      expiresIn: 60 * 60
+    });
+    console.log("token generated: " + token);
   }
-
-  public put(req, res) {
+  public put(req: Request, res: Response) {
     res.send("put method called");
   }
 
-  public delete(req, res) {
+  public delete(req:Request, res: Response) {
     res.send("delete method called");
   }
 }

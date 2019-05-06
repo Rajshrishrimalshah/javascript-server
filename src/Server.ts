@@ -3,7 +3,6 @@ import { IConfig } from "./config";
 import * as express from "express";
 import * as bodyParser from "body-parser";
 import { errorHandler } from "./libs/routes/errorHandler";
-import { configuration } from "./config";
 import { TROUTER } from "./router";
 class Server {
   private port;
