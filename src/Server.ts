@@ -8,11 +8,10 @@ import { default as Database } from "./libs/Database";
 import { errorHandler } from "./libs/routes/errorHandler";
 
 class Server {
-  public app = express();
-  private port;
+  public app: express.Express;
 
-  constructor(configuration) {
-    this.port = configuration.port;
+  constructor(private configuration) {
+    this.app = express();
   }
 
   public initBodyParser = () => {
@@ -34,8 +33,8 @@ class Server {
 
   public run() {
     Database.open({ mongoUrl: configuration.mongoUrl }).then(() => {
-      this.app.listen(this.port, () =>
-      console.log(`Example app listening on port ${this.port}!`));
+      this.app.listen(this.configuration.port, () =>
+      console.log(`Example app listening on port ${this.configuration.port}!`));
   })
     .catch((err) => {
       console.log("Error");
