@@ -1,5 +1,5 @@
 import { configuration } from "./config";
-import { notFound } from "./libs/routes/notFoundRoute";
+import { notFoundRoute } from "./libs/routes/notFoundRoute";
 import { traineeRouter } from "./router";
 
 import * as bodyParser from "body-parser";
@@ -28,7 +28,7 @@ class Server {
   public setupRoutes = () => {
     this.app.use("/api", traineeRouter);
     this.app.use(errorHandler);
-    this.app.use(notFound);
+    this.app.use(notFoundRoute);
   }
 
   public run() {
