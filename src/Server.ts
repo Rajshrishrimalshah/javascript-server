@@ -1,18 +1,17 @@
-import { configuration } from "./config";
-import { notFound } from "./libs/routes/notFoundRoute";
-import { TROUTER } from "./router";
-
 import * as bodyParser from "body-parser";
 import * as express from "express";
+import { configuration } from "./config";
+import { notFoundRoute } from "./libs";
+import { traineeRouter } from "./router";
+
 import { default as Database } from "./libs/Database";
 import { errorHandler } from "./libs/routes/errorHandler";
 
 class Server {
-  public app = express();
-  private port;
+  public app: express.Express;
 
-  constructor(configuration: any) {
-    this.port = configuration.port;
+  constructor(private configuration) {
+    this.app = express();
   }
 
   public initBodyParser = () => {
@@ -27,20 +26,17 @@ class Server {
   }
 
   public setupRoutes = () => {
-    this.app.use("/api", TROUTER);
+    this.app.use("/api", traineeRouter);
+
+    this.app.use(notFoundRoute);
     this.app.use(errorHandler);
-    this.app.use(notFound);
   }
 
   public run() {
     Database.open({ mongoUrl: configuration.mongoUrl }).then(() => {
-      this.app.listen(this.port, () =>
-      console.log(`Example app listening on port ${this.port}!`));
-      console.log("success");
-    })
-    .catch((err) => {
-      console.log("Error");
-    });
+      this.app.listen(this.configuration.port, () =>
+      console.log(`Example app listening on port ${this.configuration.port}!`));
+  });
   }
 }
 
