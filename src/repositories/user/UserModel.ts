@@ -1,3 +1,3 @@
 import * as mongoose from "mongoose";
 import { userSchema } from "./UserSchema";
-export default mongoose.model("user", userSchema);
+export const userModel = mongoose.model("user", userSchema);

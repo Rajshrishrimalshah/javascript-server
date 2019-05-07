@@ -36,7 +36,7 @@ class Server {
     Database.open({ mongoUrl: configuration.mongoUrl }).then(() => {
       this.app.listen(this.port, () =>
       console.log(`Example app listening on port ${this.port}!`));
-    })
+  })
     .catch((err) => {
       console.log("Error");
     });
