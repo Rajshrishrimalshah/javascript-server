@@ -3,8 +3,8 @@ import { default as hasPermission } from "../../../extraTs/utils/permissions";
 import { configuration } from "../../config";
 
 export const authMiddleWare = (module, permissionType) => (req, res, next) => {
-  const authorize = "authorization";
-  const bearerHeader = req.headers[authorize];
+  const auth = "authorization";
+  const bearerHeader = req.headers[auth];
   if (typeof bearerHeader !== "undefined") {
     const bearer = bearerHeader.split(" ");
     const bearerToken = bearer[1];
@@ -15,7 +15,7 @@ export const authMiddleWare = (module, permissionType) => (req, res, next) => {
         next({
           error: "Unauthorized",
           message: "Your are unauthorized",
-          status: 403,
+          status: 403
         });
       } else {
         if (hasPermission(module, decode.role, permissionType)) {
@@ -24,7 +24,7 @@ export const authMiddleWare = (module, permissionType) => (req, res, next) => {
           next({
             error: "Unauthorized",
             message: "Your are unauthorized",
-            status: 403,
+            status: 403
           });
         }
         next();
