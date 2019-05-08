@@ -1,9 +1,11 @@
 
 import {  checkSchema } from "express-validator/check";
+import { configuration } from "../../config";
 import { schema } from "./schema";
 
 import * as express from "express";
-import { authMiddleWare } from "../../libs/routes/authMiddleWare";
+import * as jwt from "jsonwebtoken";
+import { authMiddleWare, authMiddleWareUpdate } from "../../libs/routes/authMiddleWare";
 import TraineeController from "./Controller";
 import { validation } from "./validation";
 
@@ -18,5 +20,15 @@ traineeRouter.post("/signup", checkSchema(schema.create), validation(), TraineeC
 traineeRouter.get("/signin", checkSchema(schema.get), validation(), TraineeController.get);
 
 traineeRouter.get("/auth", authMiddleWare("getUsers", "read"), TraineeController.get);
+
+traineeRouter.get("/token", (req, res ) => {
+  const { id, email } = req.body;
+  const token = jwt.sign({ email, id }, configuration.secret, {
+    expiresIn: 60 * 60
+  });
+  res.send(token);
+}, TraineeController.get);
+
+traineeRouter.get("/check", authMiddleWareUpdate, TraineeController.get);
 
 export default traineeRouter;

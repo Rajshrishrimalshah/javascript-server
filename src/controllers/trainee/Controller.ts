@@ -3,7 +3,7 @@ import * as jwt from "jsonwebtoken";
 import { configuration } from "../../config";
 class TraineeController {
   public get(req: Request, res: Response) {
-    res.send("Welcome you can access file !");
+    res.send("get method called ! ");
   }
 
   public post(req: Request, res: Response) {

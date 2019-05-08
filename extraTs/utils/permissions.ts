@@ -1,45 +1,33 @@
 import { IHasPer } from "./../interfaces";
 let hasPermission: IHasPer;
 
-import {
-  PERMISSION_ALL,
-  PERMISSION_READ,
-  PERMISSION_WRITE,
-  PERMISSION_DELETE,
-  MODULE_USER,
-  ROLE_OF_TRAINER,
-  ROLE_OF_TRAINEE,
-  ROLL_OF_HEAD_TRAINER
-} from "../constant";
+import * as constant from "../constant";
 
-const PERMISSION = {
-  [MODULE_USER]: {
-    [PERMISSION_ALL]: [ROLL_OF_HEAD_TRAINER],
-    [PERMISSION_READ]: [ROLE_OF_TRAINEE, ROLE_OF_TRAINER],
-    [PERMISSION_WRITE]: [ROLE_OF_TRAINER],
-    [PERMISSION_DELETE]: []
+const permissions = {
+  [constant.MODULE_USER]: {
+    [constant.PERMISSION_ALL]: [constant.ROLL_OF_HEAD_TRAINER],
+    [constant.PERMISSION_READ]: [constant.ROLE_OF_TRAINEE, constant.ROLE_OF_TRAINER],
+    [constant.PERMISSION_WRITE]: [constant.ROLE_OF_TRAINER],
+    [constant.PERMISSION_DELETE]: []
   }
 };
 
-hasPermission = function(module, role, permissionType)  {
-  console.log('Module : '+module+' role : '+role+' PermissionType : '+permissionType);
-  if (!PERMISSION[module]) {
-    return false;
-  }
-
-  if (!PERMISSION[module][permissionType]) {
+hasPermission = (module, role, permissionType) => {
+  console.log("Module : " + module + " role : " + role + " PermissionType : " + permissionType);
+  if (!permissions.hasOwnProperty(module)) {
     return false;
   }
 
   if (
-    PERMISSION[module][PERMISSION_ALL] &&
-    PERMISSION[module][PERMISSION_ALL][role] != -1) {
+    permissions[module].hasOwnProperty(constant.PERMISSION_ALL) &&
+    permissions[module][constant.PERMISSION_ALL].includes(role)) {
     return true;
   }
 
-  if(PERMISSION[module][permissionType][role] === -1){ return false }
-
-  return true;
-};
+  return (
+    permissions[module].hasOwnProperty(permissionType) &&
+    permissions[module][permissionType].includes(role)
+  );
+  };
 
 export default hasPermission;
