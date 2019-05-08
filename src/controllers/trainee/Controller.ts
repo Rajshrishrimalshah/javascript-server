@@ -8,10 +8,10 @@ class TraineeController {
 
   public post(req: Request, res: Response) {
     const { name, email, password } = req.body;
-    const token = jwt.sign({ email }, configuration.secret, {
+    const token = jwt.sign({ email, password }, configuration.secret, {
       expiresIn: 60 * 60
     });
-    res.send("Token generated:   " + token);
+    res.send(token);
   }
   public put(req: Request, res: Response) {
     res.send("put method called");

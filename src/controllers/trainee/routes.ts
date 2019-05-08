@@ -14,6 +14,9 @@ traineeRouter.post("/post", checkSchema(schema.create), validation(), TraineeCon
 traineeRouter.put("/post", checkSchema(schema.update), validation(), TraineeController.put);
 traineeRouter.delete("/post", checkSchema(schema.delete), validation(), TraineeController.delete);
 
+traineeRouter.post("/signup", checkSchema(schema.create), validation(), TraineeController.post);
+traineeRouter.get("/signin", checkSchema(schema.get), validation(), TraineeController.get);
+
 traineeRouter.get("/auth", authMiddleWare("getUsers", "read"), TraineeController.get);
 
 export default traineeRouter;
