@@ -2,7 +2,7 @@ import { notFoundRoute } from "./libs";
 import * as express from "express";
 import * as bodyParser from "body-parser";
 import { errorHandler } from "./libs/routes/errorHandler";
-import { TROUTER } from "./router";
+import { traineeRouter } from "./router";
 class Server {
   public app: express.Express;
 
@@ -22,7 +22,7 @@ class Server {
   };
 
   public setupRoutes = () => {
-    this.app.use("/api", TROUTER);
+    this.app.use("/api", traineeRouter);
 
 
     this.app.use(notFoundRoute);

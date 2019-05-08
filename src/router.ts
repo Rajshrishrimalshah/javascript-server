@@ -1,3 +1,1 @@
-import { traineeRouter } from "./controllers";
-
-export const TROUTER = traineeRouter;
+export  { default as traineeRouter } from "./controllers/trainee/routes";
