@@ -2,17 +2,24 @@ import { check } from "express-validator/check";
 
 export const schema: any = {
   create: {
+    email: {
+      in: ["body"],
+      isEmpty: {
+        errorMessage: "Email is required",
+        negated: true
+      },
+      isString: true,
+    },
     id: {
       in: ["body"],
-      isInt: true,
       isEmpty: {
         errorMessage: "ID is required",
         negated: true
-      }
+      },
+      isInt: true,
     },
     name: {
       in: ["body"],
-      isString: true,
       isEmpty: {
         errorMessage: "Name is required",
         negated: true
@@ -20,59 +27,46 @@ export const schema: any = {
       isLength: {
         errorMessage: "length must be 3 characters",
         options: { min: 3 }
-      }
-    },
-    email: {
-      in: ["body"],
+      },
       isString: true,
-      isEmpty: {
-        errorMessage: "Email is required",
-        negated: true
-      }
-    }
+    },
   },
   delete: {
     id: {
       in: ["body"],
-      isInt: true,
       isEmpty: {
         errorMessage: "ID is required",
         negated: true
-      }
+      },
+      isInt: true,
     }
   },
-  update: {
-    id: {
-      in: ["body"],
-      isInt: true,
-      isEmpty: {
-        errorMessage: "ID is required",
-        negated: true
-      }
-    },
-    dataToUpdate: {
-      in: ['body'],
-      isString: false,
-      isObject: false,
-      custom: function(dataToUpdate) {},
-  }
-  },
   get: {
+    limit: {
+      errorMessage: "Limit is invalid",
+      in: ["body"],
+      isInt: false,
+      isString: false,
+    },
     skip: {
       in: ["body"],
       isInt: false,
-      options: value => {
+      options: (value) => {
         let sanitizedValue;
         sanitizedValue = 0;
         return sanitizedValue;
       }
     },
-    limit: {
-      isString: false,
-      isInt: false,
-      in: ['body'],
-      errorMessage: 'Limit is invalid',
-    }
-  }
+  },
+  update: {
+    id: {
+      in: ["body"],
+      isEmpty: {
+        errorMessage: "ID is required",
+        negated: true
+      },
+      isInt: true,
+    },
+  },
 };
 Object.freeze(schema);
