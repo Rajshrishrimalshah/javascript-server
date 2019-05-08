@@ -1,4 +1,4 @@
-import {express, Router} from "express";
+import { Router } from "express";
 import TraineeController from "./Controller";
 const traineeRouter: Router = Router();
 
