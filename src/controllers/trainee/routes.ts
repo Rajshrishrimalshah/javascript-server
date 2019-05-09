@@ -8,6 +8,7 @@ import {
   authMiddleWare,
   authMiddleWareUpdate
 } from "../../libs/routes/authMiddleWare";
+import { userRepo } from "../../repositories/user/UserRepository";
 import TraineeController from "./Controller";
 import { validation } from "./validation";
 
@@ -76,5 +77,10 @@ traineeRouter.get(
 );
 
 traineeRouter.get("/check", authMiddleWareUpdate, TraineeController.get);
+
+traineeRouter.get("/id", async (req, res) => {
+const response = await userRepo.getUserDetailsByID({_id: req.body.id});
+res.json(response);
+});
 
 export default traineeRouter;
