@@ -66,8 +66,6 @@ export const authMiddleWareUpdate = (req, res, next) => {
                 status: 403
               });
           }
-          console.log(decode);
-
           const response = await userRepo.getUserDetails({email: decode.email});
           res.json(response);
       });

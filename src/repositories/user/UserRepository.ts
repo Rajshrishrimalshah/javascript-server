@@ -13,7 +13,6 @@ class UserRepository {
     return userModel.countDocuments();
   }
   public async getUserDetails(data: any) {
-    console.log("data ---", data);
     return userModel.find().where(data).select("-password");
   }
 }
