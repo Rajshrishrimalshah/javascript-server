@@ -1,7 +1,7 @@
 import * as jwt from "jsonwebtoken";
 import { default as hasPermission } from "../../../extraTs/utils/permissions";
 import { configuration } from "../../config";
-import { userRepo } from "../../repositories/user/UserRepository"
+import { userRepo } from "../../repositories/user/UserRepository";
 import { userModel } from "./../../repositories/user/UserModel";
 
 export const authMiddleWare = (module, permissionType) => (req, res, next) => {
@@ -12,7 +12,7 @@ export const authMiddleWare = (module, permissionType) => (req, res, next) => {
     const bearerToken = bearer[1];
     const token = bearerToken;
 
-    jwt.verify(token, configuration.secret, (err, decode) => {
+    jwt.verify(token, configuration.secret, {}, (err, decode) => {
       if (err) {
         next({
           error: "Unauthorized",
@@ -45,7 +45,7 @@ export const authMiddleWareUpdate = (req, res, next) => {
     const bearerToken = bearer[1];
     const token = bearerToken;
 
-    jwt.verify(token, configuration.secret, (err, decode) => {
+    jwt.verify(token, configuration.secret, {}, (err, decode) => {
       if (err) {
         next({
           error: "Unauthorized",
@@ -53,6 +53,7 @@ export const authMiddleWareUpdate = (req, res, next) => {
           status: 403
         });
       } else {
+        // tslint:disable-next-line:no-shadowed-variable
         userModel.find({email: decode.email}, async (err, data) => {
           if (err) {
               console.log(err);
@@ -65,7 +66,8 @@ export const authMiddleWareUpdate = (req, res, next) => {
                 message: "either email or password incorrect",
                 status: 403
               });
-          }
+            }
+
           const response = await userRepo.getUserDetails({email: decode.email});
           res.json(response);
       });

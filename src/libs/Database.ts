@@ -3,9 +3,13 @@ import { seedData } from "./seedData";
 class Database {
   public static open({ mongoUrl }) {
     return new Promise((resolve, reject) => {
-      const options = {};
+      const options = {
+        useCreateIndex: true,
+        useFindAndModify: false,
+        useNewUrlParser: true
+      };
       try {
-      mongoose.connect(mongoUrl, { useNewUrlParser: true });
+        mongoose.connect(mongoUrl, options);
       } catch (e) {
         console.log(e);
       }
@@ -19,7 +23,6 @@ class Database {
         resolve();
       });
     });
-
   }
 
   public static disconnect() {

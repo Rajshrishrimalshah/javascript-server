@@ -10,7 +10,7 @@ export const seedData = () => {
       });
       userRepo.create({
         created: new Date(), email: "temp3@gmail.com", password: "testing1",
-        });
+      });
     } else {
       userRepo.count().then((count) => {
         if (count === 0) {
