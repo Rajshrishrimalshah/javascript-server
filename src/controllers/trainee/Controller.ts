@@ -9,7 +9,7 @@ class TraineeController {
   public post(req: Request, res: Response) {
     const { name, email, password } = req.body;
     // tslint:disable-next-line:no-shadowed-variable
-    const token = jwt.sign({ email, password }, {expiresIn: 600 * 60}, configuration.secret, (err, token) => {
+    const token = jwt.sign({ email, password }, configuration.secret,  {expiresIn: 600 * 60}, (err, token) => {
       res.send(token);
     });
   }
