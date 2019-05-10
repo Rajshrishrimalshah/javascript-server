@@ -39,12 +39,6 @@ traineeRouter.delete(
   TraineeController.delete
 );
 
-traineeRouter.post(
-  "/signup",
-  checkSchema(schema.create),
-  validation(),
-  TraineeController.post
-);
 traineeRouter.get(
   "/signin",
   checkSchema(schema.get),
