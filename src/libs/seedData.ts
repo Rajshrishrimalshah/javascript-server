@@ -19,7 +19,7 @@ export const seedData = () => {
       });
       userRepo.create({
         created: new Date(),
-        email: "temp3@gmail.com",
+        email: "test3@gmail.com",
         password: await bcrypt.hash("test3", parseInt((configuration.bcrypt), 10)),
         role: "trainee"
       });

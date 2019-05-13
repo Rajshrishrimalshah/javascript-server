@@ -69,9 +69,4 @@ traineeRouter.get(
 
 traineeRouter.get("/check", authMiddleWare("getUsers", "read"), TraineeController.get);
 
-traineeRouter.get("/id", async (req, res) => {
-const response = await userRepo.getUserDetailsByID({_id: req.body.id});
-res.json(response);
-});
-
 export default traineeRouter;

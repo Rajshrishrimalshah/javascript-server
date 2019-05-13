@@ -14,5 +14,7 @@ userRouter.post(
 );
 
 userRouter.get("/signin", authMiddleWare("getUsers", "read"), UserController.get);
+userRouter.delete("/delete", UserController.delete);
+userRouter.put("/update", UserController.updateMethod);
 
 export default userRouter;

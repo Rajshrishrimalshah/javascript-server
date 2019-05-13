@@ -23,7 +23,7 @@ export const authMiddleWare = (moduleName, permissionType) => (
 
   const bearerToken = bearerHeader.split(" ")[1];
   jwt.verify(bearerToken, configuration.secret, {}, async (err: any, decode: any) => {
-      const result = await userRepo.getUserDetails({ email: decode.email });
+      const result = await userRepo.get({ email: decode.email });
       if (result == null) {
         next({ message: "Invalid credentials" });
       } else {

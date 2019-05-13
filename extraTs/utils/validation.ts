@@ -4,7 +4,7 @@ import { validateEmail } from "./helpers";
 
 let validEmail = [];
 let invalidEmail = [];
-let myEmail = /@successive.tech\s*$/;
+let myEmail = /^[a-zA-Z0-9_.+-]+@(?:(?:[a-zA-Z0-9-]+\.)?[a-zA-Z]+\.)?(successive)\.tech$/;
 
 export function CheckEmail(users: IValid[]) {
   users.forEach(element => {
