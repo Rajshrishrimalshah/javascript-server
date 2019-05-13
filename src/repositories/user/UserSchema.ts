@@ -6,6 +6,7 @@ class UserSchema extends versionschema {
     const userschema = {
       email: {type: String, unique: true},
       password: { type: String},
+      role: {type: String}
       };
     super(userschema, options);
 

@@ -4,7 +4,8 @@ import { configuration } from "../../config";
 
 class UserController {
   public get(req: Request, res: Response) {
-  res.send("User : get method called");
+    const user = res.locals.user;
+    res.send(user);
 }
 
   public post(req: Request, res: Response) {

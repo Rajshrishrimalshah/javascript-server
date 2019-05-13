@@ -4,10 +4,7 @@ import { schema } from "./schema";
 
 import * as express from "express";
 import * as jwt from "jsonwebtoken";
-import {
-  authMiddleWare,
-  authMiddleWareUpdate
-} from "../../libs/routes/authMiddleWare";
+import { authMiddleWare } from "../../libs/routes/authMiddleWare";
 import { userRepo } from "../../repositories/user/UserRepository";
 import TraineeController from "./Controller";
 import { validation } from "./validation";
@@ -70,7 +67,7 @@ traineeRouter.get(
   TraineeController.get
 );
 
-traineeRouter.get("/check", authMiddleWareUpdate, TraineeController.get);
+traineeRouter.get("/check", authMiddleWare("getUsers", "read"), TraineeController.get);
 
 traineeRouter.get("/id", async (req, res) => {
 const response = await userRepo.getUserDetailsByID({_id: req.body.id});

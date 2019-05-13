@@ -1,6 +1,6 @@
 import * as express from "express";
 import { checkSchema } from "express-validator/check";
-import { authMiddleWareUpdate } from "../../libs/routes/authMiddleWare";
+import { authMiddleWare } from "../../libs/routes/authMiddleWare";
 import UserController from "./Controller";
 import { schema } from "./schema";
 import { validation } from "./validation";
@@ -13,6 +13,6 @@ userRouter.post(
   UserController.post
 );
 
-userRouter.get("/signin", authMiddleWareUpdate, UserController.get);
+userRouter.get("/signin", authMiddleWare("getUsers", "read"), UserController.get);
 
 export default userRouter;

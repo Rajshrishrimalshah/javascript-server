@@ -32,14 +32,14 @@ class Server {
     this.app.use(errorHandler);
   }
 
-  public run() {
-    Database.open({ mongoUrl: configuration.mongoUrl }).then(() => {
-      this.app.listen(this.configuration.port, () =>
+  public async run() {
+    try {
+    await Database.open({ mongoUrl: configuration.mongoUrl });
+    this.app.listen(this.configuration.port, () =>
       console.log(`Example app listening on port ${this.configuration.port}!`));
-  })
-    .catch((err) => {
+  } catch {
       console.log("Error");
-    });
+    }
   }
 }
 

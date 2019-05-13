@@ -12,8 +12,8 @@ class UserRepository {
   public count() {
     return userModel.countDocuments();
   }
-  public async getUserDetails(email: any) {
-    return userModel.find().where(email).select("-password");
+  public async getUserDetails(data: any) {
+    return userModel.findOne().where(data).select("-password");
   }
 
   public async getUserDetailsByID(id: any) {
