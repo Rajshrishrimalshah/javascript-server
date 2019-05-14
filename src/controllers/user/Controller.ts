@@ -1,3 +1,4 @@
+import * as bcrypt from "bcrypt";
 import { NextFunction, Request, Response } from "express";
 import * as jwt from "jsonwebtoken";
 import { configuration } from "../../config";
@@ -10,12 +11,28 @@ class UserController {
     res.send(user);
 }
 
-  public post(req: Request, res: Response) {
-    const { id, email } = req.body;
-    // tslint:disable-next-line:no-shadowed-variable
-    const token = jwt.sign({ id, email }, configuration.secret,  {expiresIn: 600 * 60}, (err, token) => {
-      res.send(token);
-    });
+  public async post(req: Request, res: Response, next: NextFunction) {
+    try {
+    const { email, password }  = req.body;
+    const result = await userRepo.getUserDetails({ email });
+    if (!result) {
+    next({ message: "either email or password incorrect" });
+  } else {
+    console.log(result.password);
+    console.log(password);
+    const check = await bcrypt.compare(password, result.password);
+    console.log(check);
+    if (!check) {
+      console.log(res);
+      next({ message: "either email or password incorrect" });
+      } else {
+        const token = jwt.sign({ email }, configuration.secret,  {expiresIn: 60 * 15}, (err, token) => {
+          res.send(token);
+      });
+      }}
+    } catch (err) {
+      console.log("Error");
+    }
 }
 
   public put(req: Request, res: Response) {
@@ -23,6 +40,7 @@ class UserController {
 }
 
   public async delete(req: Request, res: Response, next: NextFunction) {
+    try {
     const { email } = req.body;
     const result = await userRepo.get({ email });
     if (result === null) {
@@ -31,9 +49,12 @@ class UserController {
         userRepo.delete(result.id);
         res.send("User deleted !");
       }
+    } catch (err) {
+      console.log("Error !");
+    }
 
 }
-public async updateMethod(req: Request, res: Response) {
+public async update(req: Request, res: Response) {
   try {
     await userRepo.update(
     { email: req.body.email },

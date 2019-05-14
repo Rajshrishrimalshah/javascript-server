@@ -46,6 +46,7 @@ traineeRouter.get(
 traineeRouter.get(
   "/auth",
   authMiddleWare("getUsers", "read"),
+  validation(),
   TraineeController.get
 );
 
@@ -67,6 +68,6 @@ traineeRouter.get(
   TraineeController.get
 );
 
-traineeRouter.get("/check", authMiddleWare("getUsers", "read"), TraineeController.get);
+traineeRouter.get("/check", authMiddleWare("getUsers", "read"), validation(), TraineeController.get);
 
 export default traineeRouter;

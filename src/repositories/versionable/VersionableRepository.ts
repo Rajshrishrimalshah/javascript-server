@@ -19,6 +19,9 @@ export class VersionableRepository {
     return this.model.findOne().where(data).select("-password");
   }
 
+  public async getUserDetails(data: any) {
+    return this.model.findOne().where(data);
+  }
   public async delete(id: any) {
     return this.model.findOneAndRemove({_id: id});
   }
@@ -27,4 +30,3 @@ export class VersionableRepository {
     return this.model.updateOne(query, data);
     }
 }
-// export const userRepo = new VersionableRepository();

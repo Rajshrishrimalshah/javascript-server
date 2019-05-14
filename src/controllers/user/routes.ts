@@ -6,15 +6,11 @@ import { schema } from "./schema";
 import { validation } from "./validation";
 
 const userRouter: express.Router = express.Router();
-userRouter.post(
-  "/signup",
-  checkSchema(schema.signup),
-  validation(),
-  UserController.post
-);
 
-userRouter.get("/signin", authMiddleWare("getUsers", "read"), UserController.get);
-userRouter.delete("/delete", UserController.delete);
-userRouter.put("/update", UserController.updateMethod);
+userRouter.get("/profile", authMiddleWare("getUsers", "read"), validation(), UserController.get);
+userRouter.delete("/delete", authMiddleWare("getUsers", "read"), validation(),  UserController.delete);
+userRouter.put("/update", authMiddleWare("getUsers", "read"), validation(), UserController.update);
+
+userRouter.get("/auth", UserController.post);
 
 export default userRouter;

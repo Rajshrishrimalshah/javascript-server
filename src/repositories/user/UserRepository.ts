@@ -1,4 +1,3 @@
-import * as mongoose from "mongoose";
 import { VersionableRepository } from "../versionable/VersionableRepository";
 import { userModel } from "./UserModel";
 class UserRepository extends VersionableRepository {
