@@ -3,15 +3,15 @@ import * as jwt from "jsonwebtoken";
 import { configuration } from "../../config";
 class TraineeController {
   public get(req: Request, res: Response) {
-    res.send("Welcome you can access file !");
+    res.send("get method called ! ");
   }
 
   public post(req: Request, res: Response) {
     const { name, email, password } = req.body;
-    const token = jwt.sign({ email }, configuration.secret, {
-      expiresIn: 60 * 60
+    // tslint:disable-next-line:no-shadowed-variable
+    const token = jwt.sign({ email, password }, configuration.secret,  {expiresIn: 600 * 60}, (err, token) => {
+      res.send(token);
     });
-    res.send("Token generated:   " + token);
   }
   public put(req: Request, res: Response) {
     res.send("put method called");
