@@ -2,7 +2,7 @@ import * as bodyParser from "body-parser";
 import * as express from "express";
 import { configuration } from "./config";
 import { notFoundRoute } from "./libs";
-import { traineeRouter } from "./router";
+import routes from "./router";
 
 import { default as Database } from "./libs/Database";
 import { errorHandler } from "./libs/routes/errorHandler";
@@ -26,20 +26,20 @@ class Server {
   }
 
   public setupRoutes = () => {
-    this.app.use("/api", traineeRouter);
+    this.app.use("/api", routes);
 
     this.app.use(notFoundRoute);
     this.app.use(errorHandler);
   }
 
-  public run() {
-    Database.open({ mongoUrl: configuration.mongoUrl }).then(() => {
-      this.app.listen(this.configuration.port, () =>
+  public async run() {
+    try {
+    await Database.open({ mongoUrl: configuration.mongoUrl });
+    this.app.listen(this.configuration.port, () =>
       console.log(`Example app listening on port ${this.configuration.port}!`));
-  })
-    .catch((err) => {
+  } catch {
       console.log("Error");
-    });
+    }
   }
 }
 

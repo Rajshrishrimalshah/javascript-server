@@ -3,4 +3,5 @@ export interface IConfig {
   env: string;
   secret: string;
   mongoUrl: string;
+  bcrypt: string;
 }

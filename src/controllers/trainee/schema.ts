@@ -51,11 +51,11 @@ export const schema: any = {
     skip: {
       in: ["body"],
       isInt: false,
-      options: (value) => {
-        let sanitizedValue;
-        sanitizedValue = 0;
-        return sanitizedValue;
-      }
+      // options: (value) => {
+      //   let sanitizedValue;
+      //   sanitizedValue = 0;
+      //   return sanitizedValue;
+      // }
     },
   },
   update: {
