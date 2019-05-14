@@ -27,7 +27,6 @@ export const authMiddleWare = (moduleName, permissionType) => (
       if (result == null) {
         next({ message: "Invalid credentials" });
       } else {
-        console.log(result);
         res.locals.user = result;
       }
 

@@ -18,15 +18,11 @@ class UserController {
     if (!result) {
     next({ message: "either email or password incorrect" });
   } else {
-    console.log(result.password);
-    console.log(password);
     const check = await bcrypt.compare(password, result.password);
-    console.log(check);
     if (!check) {
-      console.log(res);
       next({ message: "either email or password incorrect" });
       } else {
-        const token = jwt.sign({ email }, configuration.secret,  {expiresIn: 60 * 15}, (err, token) => {
+        const token = jwt.sign({ email, id: result.id }, configuration.secret,  {expiresIn: 60 * 15}, (err, token) => {
           res.send(token);
       });
       }}
